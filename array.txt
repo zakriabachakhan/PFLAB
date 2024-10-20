@@ -1,0 +1,153 @@
+C++ Arrays With Examples
+By Sruthy  Updated March 7, 2024
+What Are Arrays in C++? Why Are They Useful?
+
+In this Complete C++ Training Series, we will take a look at Arrays in C++ in this tutorial.
+
+Array in C++ can be simply defined as a collection of data.
+
+If one of the applications that I am designing requires 100 variables of the integer data type. Then, by using the variable declaration, I will have to declare 100 different integer variables. This, in turn, will really be cumbersome.
+
+
+ARRAYS IN C++
+
+Instead of this, how about if I declare a single variable holding contiguous 100 memory locations? This is where arrays come into the picture.
+
+Table of Contents: [Show]
+
+Arrays In C++
+An array can be defined as a collection of variables of the same data type and has contiguous memory locations.
+
+So if I define an array of 100 integers, its memory representation will be somewhat as shown below:
+
+an array of 100 integers
+
+As shown above, 0…99 are memory locations for this array and they are contiguous. The blank panels are the actual array elements. The individual elements of an array can be accessed using the index. In the above diagram, the first index of the array is 0 while the last index is 99 (since this is an array of 100 elements).0 1 2 3 4 5 ……. ….. 99.
+
+Note that the starting index of an array is always 0. Thus for an array of n elements, the starting index of the array will be 0 and the last index will be n-1.
+
+Declare An Array
+Array declaration in C++ generally looks as shown below:
+
+datatype arrayName [ arraySize ];
+The above declaration is for a one-dimensional array. Here, the data type is any data type acceptable in C++. ‘arrayName’ is the name of the array that we are creating while arraySize that is always enclosed in square brackets ([]) is the number of elements that the array will hold. The arraySize needs to be a constant expression always.
+
+For Example, if I have to declare an array named myarray with 10 elements of type Integer, then the  declaration will look like:
+
+int myarray [10];
+Similarly, the declaration for an array ‘salary’ of type double with 20 elements will look as shown below:
+
+double salary [ 20 ];
+Initializing An Array
+Once an array is declared, it can be initialized with appropriate values. The number of values assigned to the array shall never exceed the size of the array specified in the declaration.
+
+So, let’s declare an array of size 5 and type integer and name it as myarray.
+
+int myarray[5];
+We can assign the values to the array elements one-by-one as follows:
+
+myarray[0] = 1; 
+myarray[1] = 2;
+myarray[2] = 3;
+myarray[3] = 4;
+myarray[4] = 5;
+Instead of initializing each individual element, we can also initialize an entire array during the declaration itself as shown below:
+
+int myarray[5] = {1, 2, 3, 4, 5};
+As seen above, the initialization of array elements to the values is done using curly braces ({}).
+
+As a result of the above initialization, the array will look as shown below:
+
+array after initialization
+
+We can also initialize arrays without specifying any size and by just specifying the elements.
+
+This is done as shown below:
+
+int myarray[] = {1, 2, 3, 4, 5};
+In this case, when the size of an array is not specified, the compiler assigns the size equal to a number of elements with which the array is initialized. Thus in the above case, the size of myarray will be 5.
+
+Accessing Array Elements
+Array elements can be accessed using the array index. Array index always starts from 0 and goes till arraySize-1.
+
+The syntax to access array elements is as follows:
+
+arrayName[index]
+Let’s take the myarray declared above as an example.
+
+If we need to access the 4th element of myarray, then we can do it as follows:
+
+myarray[3];
+If we need to assign the 2nd element of myarray to an integer variable, then we do it as follows:
+
+int sec_ele = myarray[1];
+Note that in C++, if we access the array elements beyond the size of an array then the program will compile fine but the results may be unexpected.
+
+If we need to access all the array elements at once, then we can make use of C++ iterative constructs which will allow us to traverse through all the elements of an array and access them using an index variable.
+
+Out of all the constructs, for loop is ideal for accessing arrays as the ‘for’ loop by definition uses an index variable to traverse through a sequence and also auto increments after each iteration.
+
+For Example, take the same myarray defined earlier. Using for loop the code for accessing myarray elements is as shown below:
+
+1
+2
+3
+4
+for(int i = 0;i<5;i++)
+{
+                   cout<<myarray[i]<<"\n";
+}
+In the above code, myarray is traversed using the index variable I from 0 to 5 and the elements are printed after each iteration.
+
+The output of the above code is:
+
+1
+2
+3
+4
+5
+
+Apart from accessing the array elements as above shown, we can also access the array elements and use them with the other operators just in the way in which we use variables to perform all different operations.
+
+Consider the following program which prints the sum of all the elements in an array:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+#include <iostream>
+include <string>
+using namespace std;
+int main()
+{
+                int myarray[5] = {10, 20,30,40,50};
+                int sum = 0;
+                for(int i = 0;i<5;i++)
+               {
+                                       sum += myarray[i];
+                }
+                cout<<"Sum of elements in myarray:\n "<<sum;
+}
+In the above code, we declare and initialize an array named myarray. We also initialize the variable sum to 0, Then we traverse myarray using a for loop and add each array element to sum.
+
+The final output given by the program is the sum of all the elements in myarray and will look as follows:
+
+Sum of elements in myarray:
+
+150
+
+As shown by the program, we can access the array elements either individually or at once using an iterative loop and also perform a variety of operations on array elements in the same way as we perform operations on variables.
+
+Conclusion
+With this, we come to the end of this article on arrays which described the basics of an array – declaring, initializing and accessing of array elements.
+
+In our next few articles, we will be discussing more on multidimensional arrays, array pointer, arrays in function, etc. along with the other concepts.
